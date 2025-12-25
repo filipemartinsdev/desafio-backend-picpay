@@ -108,17 +108,18 @@ Tendo em mente a arquitetura em camadas, a modelagem de pacotes pôde ser feita 
 ### 📁 Packages
 
 ````
-com/desafiopicpay
-├── controller/
-├── service/
-├── entity/
-├── dto/
-├── repository/
-├── exception/
-│   ├── http/
-│   └── transaction/
-├── handler/
-└── configuration/
+.
+└── com/desafiopicpay/
+    ├── controller/
+    ├── service/
+    ├── entity/
+    ├── dto/
+    ├── repository/
+    ├── exception/
+    │   ├── http/
+    │   └── transaction/
+    ├── handler/
+    └── configuration/
 ````
 
 # 📝 To do List
