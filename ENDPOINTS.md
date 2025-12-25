@@ -1,4 +1,4 @@
-#  Endpoits
+# 📍 Endpoits
 
 **Response padrão:**
 
@@ -12,7 +12,7 @@
 
 
 
-## Usuários
+## 👤 Usuários
 
 - GET `/api/v1/users`
 
@@ -67,7 +67,7 @@
 
 - DELETE `/api/v1/users/{id}`
 
-## Transações
+## 💸 Transações
 
 - GET `/api/v1/transactions`
 
