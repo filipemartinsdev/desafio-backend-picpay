@@ -99,15 +99,29 @@ Para o desenvolvimento desse desafio utilizei uma abordagem modular, focando em 
 Tendo em mente a arquitetura em camadas, a modelagem de pacotes pôde ser feita de forma organizada e coesa.
 
 
-<img src="./images/arquitetura_camadas.png" width="70%">
+<img src="./images/arquitetura_camadas.png" width="60%">
 
-<img src="./images/arquitetura_desafiio_backend.png" width="70%">
+<img src="./images/arquitetura_desafiio_backend.png" width="60%">
 
-<img src="./images/pacotes_desafio_backend.png" width="70%">
+<img src="./images/uml_database.png" width="60%">
 
-<img src="./images/uml_database.png" width="70%">
+### 📁 Packages
 
-## 📝 To do List
+````
+com/desafiopicpay
+├── controller/
+├── service/
+├── entity/
+├── dto/
+├── repository/
+├── exception/
+│   ├── http/
+│   └── transaction/
+├── handler/
+└── configuration/
+````
+
+# 📝 To do List
 - [x] Endpoints `users` 📍
 - [x] Endpoints `transactions` 📍
 - [x] Conexão H2 Database  💾
