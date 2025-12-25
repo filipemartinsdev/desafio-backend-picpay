@@ -31,6 +31,7 @@ A seguir estão algumas regras de negócio que são importantes para o funcionam
 - Java 17
 - Spring Framework
 - Spring Boot
+- Hibernate ORM
 - H2 Database
 - PostgreSQL
 - Apache Maven
@@ -94,7 +95,13 @@ A seguir estão algumas regras de negócio que são importantes para o funcionam
 
 ## 📐 Abordagem e Arquitetura
 
+Para o desenvolvimento desse desafio utilizei uma abordagem modular, focando em desacoplamento de serviços.
+Tendo em mente a arquitetura em camadas, a modelagem de pacotes pôde ser feita de forma organizada e coesa.
 
+
+![arquitetura_camadas.png](images/arquitetura_camadas.png)
+![arquitetura_desafiio_backend.png](images/arquitetura_desafiio_backend.png)
+![pacotes_desafio_backend.png](images/pacotes_desafio_backend.png)
 
 ## 📝 To do List
 - [x] Endpoints `users` 📍
