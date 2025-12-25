@@ -99,10 +99,13 @@ Para o desenvolvimento desse desafio utilizei uma abordagem modular, focando em 
 Tendo em mente a arquitetura em camadas, a modelagem de pacotes pôde ser feita de forma organizada e coesa.
 
 
-![arquitetura_camadas.png](images/arquitetura_camadas.png)
-![arquitetura_desafiio_backend.png](images/arquitetura_desafiio_backend.png)
-![pacotes_desafio_backend.png](images/pacotes_desafio_backend.png)
-![uml_database.png](images/uml_database.png)
+<img src="./images/arquitetura_camadas.png" width="70%">
+
+<img src="./images/arquitetura_desafiio_backend.png" width="70%">
+
+<img src="./images/pacotes_desafio_backend.png" width="70%">
+
+<img src="./images/uml_database.png" width="70%">
 
 ## 📝 To do List
 - [x] Endpoints `users` 📍
