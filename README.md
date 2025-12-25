@@ -5,7 +5,7 @@ A proposta é uma API RESTful para processar transações, além do cadastro de 
 
 Repositório do desafio: https://github.com/PicPay/picpay-desafio-backend
 
-## 📃 Requisitos
+## 📃 Requisitos do desafio
 A seguir estão algumas regras de negócio que são importantes para o funcionamento do PicPay Simplificado:
 
 - Temos 2 tipos de usuários, os comuns e lojistas, ambos têm carteira com dinheiro e realizam transferências entre eles.
