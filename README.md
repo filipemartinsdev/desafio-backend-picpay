@@ -102,6 +102,7 @@ Tendo em mente a arquitetura em camadas, a modelagem de pacotes pôde ser feita 
 ![arquitetura_camadas.png](images/arquitetura_camadas.png)
 ![arquitetura_desafiio_backend.png](images/arquitetura_desafiio_backend.png)
 ![pacotes_desafio_backend.png](images/pacotes_desafio_backend.png)
+![uml_database.png](images/uml_database.png)
 
 ## 📝 To do List
 - [x] Endpoints `users` 📍
