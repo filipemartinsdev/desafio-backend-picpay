@@ -9,7 +9,7 @@
 		<relativePath/>
 	</parent>
 	<groupId>com</groupId>
-	<artifactId>desafiopicpay</artifactId>
+	<artifactId>desafio-backend-picpay</artifactId>
 	<version>0.0.1</version>
 	<name>desafiopicpay</name>
 	<description>Desafio BackEnd proposto pelo PicPay</description>
