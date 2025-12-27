@@ -10,6 +10,9 @@ import lombok.Getter;
 
 import java.math.BigDecimal;
 
+/**
+ * User Response DTO of API
+ */
 @Data
 @Builder @Getter
 @AllArgsConstructor

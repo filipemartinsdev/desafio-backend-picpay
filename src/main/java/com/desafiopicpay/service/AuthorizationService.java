@@ -15,6 +15,9 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.Map;
 
+/**
+ * Class to request external Transaction Authorization Service
+ */
 @Service
 public class AuthorizationService {
     @Autowired

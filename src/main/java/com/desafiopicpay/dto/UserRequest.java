@@ -8,6 +8,9 @@ import lombok.*;
 
 import java.math.BigDecimal;
 
+/**
+ * User Request DTO of API
+ */
 @Data
 @Builder @Getter
 @AllArgsConstructor

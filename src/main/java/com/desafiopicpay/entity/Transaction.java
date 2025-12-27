@@ -7,6 +7,9 @@ import lombok.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+/**
+ * Transaction Entity of Database
+ */
 @Entity
 @Table(name="transactions")
 @Getter @Setter

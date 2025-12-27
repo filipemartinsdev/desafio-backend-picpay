@@ -7,6 +7,10 @@ import lombok.*;
 
 import java.math.BigDecimal;
 
+
+/**
+ * User Entity of Database
+ */
 @Entity @Table(name = "users")
 @Builder
 @Getter

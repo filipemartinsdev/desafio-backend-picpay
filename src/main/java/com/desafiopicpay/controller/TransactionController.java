@@ -33,6 +33,11 @@ public class TransactionController {
         );
     }
 
+    /**
+     * Endpoint to handle transaction request.
+     * @param transactionRequest
+     * @return API Response with Accepted Transaction
+     */
     @PostMapping("/transfer")
     public ResponseEntity<ApiResponse<TransactionResponse>> transfer(@Valid @RequestBody TransactionRequest transactionRequest){
         return ResponseEntity.ok(

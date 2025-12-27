@@ -9,6 +9,9 @@ import lombok.Getter;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+/**
+ * Transaction Response DTO of API
+ */
 @Data
 @Getter
 @AllArgsConstructor
