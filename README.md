@@ -36,6 +36,8 @@ A seguir estão algumas regras de negócio que são importantes para o funcionam
 - PostgreSQL
 - Apache Maven
 - Lombok
+- Javadoc
+- Spring openAPI (Swagger)
 
 ## 🌐 Como executar
     
