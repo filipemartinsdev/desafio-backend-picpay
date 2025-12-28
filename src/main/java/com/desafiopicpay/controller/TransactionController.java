@@ -14,6 +14,7 @@ import java.util.List;
 
 /**
  * Transactions controller, following the JSend standard response.
+ * <p>The response is wrapped in {@link ApiResponseDTO} for standardize format.
  * <p>Endpoints to:
  * <ul>
  *     <li>Get all transactions</li>
@@ -39,7 +40,6 @@ public class TransactionController implements TransactionControllerSwaggerDoc {
 
     /**
      * Retrieve a list of all transactions with their basic details.
-     * <p>The response is wrapped in {@link ApiResponseDTO} for standardize format.
      * @return {@link ResponseEntity} containing {@link ApiResponseDTO} with list of {@link TransactionResponseDTO} on field data.
      * @see TransactionService#getAll()
      */
@@ -53,7 +53,6 @@ public class TransactionController implements TransactionControllerSwaggerDoc {
 
     /**
      * Retrieve a transaction from its id.
-     * <p>The response isi wrapped in {@link ApiResponseDTO} for standardize format.
      * @param id the transaction id
      * @return {@link ResponseEntity} containing {@link ApiResponseDTO} with the transaction on field data.
      * @see TransactionService#getById(Long)
@@ -69,7 +68,6 @@ public class TransactionController implements TransactionControllerSwaggerDoc {
 
     /**
      * Handle new transaction request.
-     * <p>The response is wrapped in {@link ApiResponseDTO} for standardize dormat.
      * @param transactionRequest the requested transaction
      * @return {@link ResponseEntity} containing {@link ApiResponseDTO} with the requested transaction on field data
      * @see TransactionService#create(TransactionRequestDTO)
