@@ -1,7 +1,7 @@
 package com.desafiopicpay.service;
 
-import com.desafiopicpay.dto.TransactionRequest;
-import com.desafiopicpay.dto.TransactionResponse;
+import com.desafiopicpay.dto.TransactionRequestDTO;
+import com.desafiopicpay.dto.TransactionResponseDTO;
 import com.desafiopicpay.exception.http.NotFoundException;
 import com.desafiopicpay.entity.Transaction;
 import com.desafiopicpay.entity.User;
@@ -25,21 +25,21 @@ public class TransactionService {
     @Autowired
     private AuthorizationService authorizationService;
 
-    public List<TransactionResponse> getAll(){
+    public List<TransactionResponseDTO> getAll(){
         return this.transactionRepository.findAll().stream()
-                .map(TransactionResponse::new)
+                .map(TransactionResponseDTO::new)
                 .toList();
     }
 
-    public TransactionResponse getById(Long id){
-        return new TransactionResponse(
+    public TransactionResponseDTO getById(Long id){
+        return new TransactionResponseDTO(
                 this.transactionRepository.findById(id).orElseThrow(()->{
                     return new NotFoundException("Transaction not found");
                 })
         );
     }
 
-    public TransactionResponse create(TransactionRequest transactionRequest){
+    public TransactionResponseDTO create(TransactionRequestDTO transactionRequest){
         User sender = this.userService.findUserById(transactionRequest.getSender());
         User receiver = this.userService.findUserById(transactionRequest.getReceiver());
 
@@ -57,7 +57,7 @@ public class TransactionService {
 
         this.notificationService.notifyTransaction(transaction);
 
-        return new TransactionResponse(
+        return new TransactionResponseDTO(
                 this.transactionRepository.save(transaction)
         );
     }

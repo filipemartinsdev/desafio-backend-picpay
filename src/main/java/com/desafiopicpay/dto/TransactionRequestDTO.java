@@ -12,7 +12,7 @@ import java.math.BigDecimal;
  */
 @Data
 @Getter
-public class TransactionRequest {
+public class TransactionRequestDTO {
     @NotNull @Positive
     private BigDecimal amount;
 

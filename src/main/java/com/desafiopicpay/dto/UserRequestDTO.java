@@ -14,8 +14,8 @@ import java.math.BigDecimal;
 @Data
 @Builder @Getter
 @AllArgsConstructor
-public class UserRequest {
-    public UserRequest(){}
+public class UserRequestDTO {
+    public UserRequestDTO(){}
 
     @NotNull
     private String firstName;
