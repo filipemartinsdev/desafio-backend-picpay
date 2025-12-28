@@ -1,5 +1,6 @@
 package com.desafiopicpay.doc;
 
+import com.desafiopicpay.controller.UserController;
 import com.desafiopicpay.dto.ApiResponseDTO;
 import com.desafiopicpay.dto.UserRequestDTO;
 import com.desafiopicpay.dto.UserResponseDTO;
@@ -10,13 +11,17 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
+import java.util.List;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import java.util.List;
 
+/**
+ * Interface to document endpoints of {@link UserController} using Swagger.
+ * @author
+ */
 public interface UserControllerSwaggerDoc {
     @Operation(
             summary = "Get all users",

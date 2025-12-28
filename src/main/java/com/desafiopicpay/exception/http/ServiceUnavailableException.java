@@ -6,6 +6,6 @@ import org.springframework.http.HttpStatus;
 @Getter
 public class ServiceUnavailableException extends HttpStatusException {
     public ServiceUnavailableException(String message) {
-        super(message, HttpStatus.NOT_FOUND.value());
+        super(message, HttpStatus.SERVICE_UNAVAILABLE.value());
     }
 }

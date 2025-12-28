@@ -11,6 +11,12 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Service to manage transaction operations.
+ * <p>This depends on a {@link TransactionRepository}.
+ * @author Filipe Martins
+ * @see Transaction
+ */
 @Service
 public class TransactionService {
     @Autowired
@@ -20,7 +26,7 @@ public class TransactionService {
     private UserService userService;
 
     @Autowired
-    private NotificationService notificationService;
+    private NotificationServiceImpl notificationService;
 
     @Autowired
     private AuthorizationService authorizationService;

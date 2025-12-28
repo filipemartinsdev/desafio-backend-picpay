@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 
 
 /**
- * User Entity of Database
+ * User Entity of Database.
  */
 @Entity @Table(name = "users")
 @Builder
@@ -29,6 +29,9 @@ public class User {
     @NotNull
     private String lastName;
 
+    /**
+     * The user document (CPF/CNPJ).
+     */
     @Column(unique=true)
     private String document;
 
@@ -40,6 +43,10 @@ public class User {
 
     private BigDecimal balance;
 
+    /**
+     * The user type.
+     * <p>UserType MERCHANT can't be sender of a transaction.
+     */
     @NotNull
     @Enumerated(EnumType.STRING)
     private UserType userType;

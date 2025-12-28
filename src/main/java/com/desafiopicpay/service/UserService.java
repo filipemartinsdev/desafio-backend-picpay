@@ -6,6 +6,7 @@ import com.desafiopicpay.exception.http.NotFoundException;
 import com.desafiopicpay.exception.transaction.TransactionForbiddenException;
 import com.desafiopicpay.entity.User;
 import com.desafiopicpay.entity.UserType;
+import com.desafiopicpay.repository.TransactionRepository;
 import com.desafiopicpay.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,12 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.util.List;
 
+/**
+ * Service to manage user operations.
+ * <p>This depends on a {@link UserRepository}.
+ * @author Filipe Martins
+ * @see User
+ */
 @Service
 public class UserService {
     @Autowired
@@ -80,6 +87,12 @@ public class UserService {
         }
     }
 
+    /**
+     * Restrict method for use in TransactionService.
+     * <p>Using this approach to TransactionService not know UserRepository directly.
+     * @param id the user id
+     * @return the requested user
+     */
     public User findUserById(Long id){
         return this.userRepository.findById(id).orElseThrow(()->{
             return new NotFoundException("User not found");
