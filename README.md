@@ -103,6 +103,8 @@ Tendo em mente a arquitetura em camadas, a modelagem de pacotes pôde ser feita 
 
 <img src="./images/arquitetura_desafiio_backend.png" width="60%">
 
+<img src="./images/exception-handler.png" width="60%">
+
 <img src="./images/uml_database.png" width="60%">
 
 ### 📁 Packages
