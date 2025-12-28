@@ -26,6 +26,10 @@ A seguir estão algumas regras de negócio que são importantes para o funcionam
 
 - Este serviço deve ser RESTFul.
 
+
+---
+
+
 ## 📌 Tecnologias utilizadas
 
 - Java 17
@@ -39,6 +43,10 @@ A seguir estão algumas regras de negócio que são importantes para o funcionam
 - Javadoc
 - Spring openAPI (Swagger)
 
+
+---
+
+
 ## 🗃️ Documentação
 
 ### Projeto
@@ -47,6 +55,7 @@ Para ler a documentação do projeto, utilize o javadoc.
 
 1. Execute: `mvn javadoc:javadoc`
 2. Abra: `target/site/apidoc/index.html`
+
 
 ### API
 
@@ -59,6 +68,10 @@ Você deve ver:
 
 <img src="./images/swagger-ui.png" width="60%">
 
+
+---
+
+
 ## 🌐 Como executar
     
 ### Requisitos
@@ -66,54 +79,49 @@ Você deve ver:
 - Java 17
 - Apache Maven
 
-### Execução
-- **Sem persistência de dados (H2 Database)** 
 
-    1. Configurar `application.yaml`
+### Sem persistência de dados (H2 Database) 
 
-        ````
-        spring:
-            profiles:
-                active: dev
-        ````
+1. Configurar `application.yaml`:
 
-    2. Iniciar aplicação
-  
-        `mvn spring-boot:run`
+```yaml
+spring:
+    profiles:
+        active: dev
+```
+
+2. Iniciar aplicação: `mvn spring-boot:run`
 
 
-- **Com Persistência de dados (PostgreSQL)**
+### Com Persistência de dados (PostgreSQL)
 
-    1. Configurar `application.yaml`
+1. Configurar `application.yaml`
 
-        ````
-        spring:
-            profiles:
-                active: prod
-        ````
+```yaml
+spring:
+    profiles:
+        active: prod
+```
 
-    2. Exportar variáveis de ambiente
-  
-        ````
-        # DATABASE
-        DB_HOST=[SEU HOST]
-        DB_PORT=5432
-        DB_DATABASE=[SEU DATABASE]
-        DB_USER=[SEU USUARIO]
-        DB_PASSWORD=[SUA SENHA]
-        
-        # ENDPOINTS DESAFIO - MOCK
-        URL_API_AUTH_TRANSFER=https://util.devi.tools/api/v2/authorize
-        URL_API_NOTIFICATION=https://util.devi.tools/api/v1/notify
-        ````
-  
-    3. Iniciar aplicação
-  
-        `mvn spring-boot:run`
+2. Exportar variáveis de ambiente
 
-## 📍 Endpoints
+```env
+DB_HOST=[SEU HOST]
+DB_PORT=5432
+DB_DATABASE=[SEU DATABASE]
+DB_USER=[SEU USUARIO]
+DB_PASSWORD=[SUA SENHA]    
+URL_API_AUTH_TRANSFER=https://util.devi.tools/api/v2/authorize
+URL_API_NOTIFICATION=https://util.devi.tools/api/v1/notify
+```
 
-> Leia [ENDPOINTS.md](ENDPOINTS.md).
+3. Iniciar aplicação
+
+`mvn spring-boot:run`
+
+
+---  
+
 
 ## 📐 Abordagem e Arquitetura
 
@@ -131,7 +139,7 @@ Tendo em mente a arquitetura em camadas, a modelagem de pacotes pôde ser feita 
 
 ### 📁 Packages
 
-````
+```
 .
 └── com/desafiopicpay/
     ├── controller/
@@ -144,7 +152,10 @@ Tendo em mente a arquitetura em camadas, a modelagem de pacotes pôde ser feita 
     │   └── transaction/
     ├── handler/
     └── configuration/
-````
+```
+
+---
+
 
 # 📝 To do List
 - [x] Endpoints `users` 📍
