@@ -10,7 +10,8 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 /**
- * Transaction Response DTO of API
+ * DTO for API Response of a Transaction.
+ * @author Filipe Martiins
  */
 @Data
 @Getter
@@ -30,6 +31,11 @@ public class TransactionResponseDTO {
     @NotNull
     private LocalDateTime timestamp;
 
+    /**
+     * Create a Transaction Response DTO from Transaction Entity.
+     * @param transaction the Transaction Entity
+     * @see Transaction
+     */
     public TransactionResponseDTO(Transaction transaction){
         this.id = transaction.getId();
         this.amount = transaction.getAmount();

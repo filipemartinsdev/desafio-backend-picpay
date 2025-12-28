@@ -9,14 +9,15 @@ import lombok.*;
 import java.math.BigDecimal;
 
 /**
- * User Request DTO of API
+ * DTO for API requested user.
+ * @see com.desafiopicpay.entity.User
+ * @author Filipe Martins
  */
 @Data
 @Builder @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 public class UserRequestDTO {
-    public UserRequestDTO(){}
-
     @NotNull
     private String firstName;
 

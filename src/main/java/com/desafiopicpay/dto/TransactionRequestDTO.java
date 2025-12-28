@@ -8,7 +8,8 @@ import lombok.Getter;
 import java.math.BigDecimal;
 
 /**
- * Transaction Request DTO of API
+ * DTO for API Requested transaction.
+ * @author Filipe Martins
  */
 @Data
 @Getter
