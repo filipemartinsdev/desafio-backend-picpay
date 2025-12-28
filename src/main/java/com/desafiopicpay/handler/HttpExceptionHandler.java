@@ -3,9 +3,8 @@ package com.desafiopicpay.handler;
 import com.desafiopicpay.dto.ApiResponseDTO;
 import com.desafiopicpay.exception.http.*;
 import com.desafiopicpay.exception.transaction.TransactionForbiddenException;
-import com.desafiopicpay.exception.transaction.TransactionForbiddenExceptionDetails;
+import com.desafiopicpay.service.NotificationServiceImpl;
 import org.jspecify.annotations.NonNull;
-import org.jspecify.annotations.Nullable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.web.server.MethodNotAllowedException;
-import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 /**
@@ -75,7 +73,7 @@ public class HttpExceptionHandler {
      * @param exception the thrown exception
      * @return {@link ResponseEntity} containing {@link ApiResponseDTO} with the error details.
      * @see com.desafiopicpay.service.AuthorizationService
-     * @see com.desafiopicpay.service.NotificationService
+     * @see NotificationServiceImpl
      */
     @ExceptionHandler(ServiceUnavailableException.class)
     public ResponseEntity<@NonNull ApiResponseDTO<HttpExceptionDetails>> serviceUnavailableExceptionHandler(ServiceUnavailableException exception){

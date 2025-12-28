@@ -1,20 +1,17 @@
 package com.desafiopicpay.service;
 
 import com.desafiopicpay.entity.Transaction;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
+import com.desafiopicpay.exception.http.ServiceUnavailableException;
 
 /**
- * Class to request external Notification Service
+ * Interface to connect external notification service for notify transactions to users.
+ * @author Filipe Martins
  */
-@Service
-public class NotificationService {
-    @Autowired
-    private RestTemplate restTemplate;
-
-    public void notifyTransaction(Transaction transaction){
-//        String email = user.getEmail();
-
-    }
+public interface NotificationService {
+    /**
+     * Request external service to notify.
+     * @param transaction the transaction requested to notify
+     * @throws ServiceUnavailableException if the service responses is unavailable
+     */
+    public void notifyTransaction(Transaction transaction) throws ServiceUnavailableException;
 }
