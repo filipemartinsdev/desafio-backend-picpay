@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 @Getter
 public class BadRequestException extends HttpStatusException {
     public BadRequestException(String message) {
-        super(message, HttpStatus.INTERNAL_SERVER_ERROR.value());
+        super(message, HttpStatus.BAD_REQUEST.value());
 
     }
 }
