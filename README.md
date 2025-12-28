@@ -39,6 +39,26 @@ A seguir estão algumas regras de negócio que são importantes para o funcionam
 - Javadoc
 - Spring openAPI (Swagger)
 
+## 🗃️ Documentação
+
+### Projeto
+
+Para ler a documentação do projeto, utilize o javadoc.
+
+1. Execute: `mvn javadoc:javadoc`
+2. Abra: `target/site/apidoc/index.html`
+
+### API
+
+Para ler a documentação da API, utilize o swagger.
+
+1. Inicie a aplicação: `mvn spring-boot:run`
+2. Acesse: `/swagger-ui/index.html`
+
+Você deve ver:
+
+<img src="./images/swagger-ui" width="60%">
+
 ## 🌐 Como executar
     
 ### Requisitos
