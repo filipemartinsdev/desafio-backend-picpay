@@ -128,6 +128,8 @@ Tendo em mente a arquitetura em camadas, a modelagem de pacotes pôde ser feita 
 - [x] Conexão H2 Database  💾
 - [x] Conexão PostgreSQL Database 💾 
 - [x] Tratamento de Exceções ⚡
+- [x] Documentação com Javadoc 🗃️
+- [x] Documentação da API com Swagger 🗃️
 - [ ] Hash de senhas 🔐
 - [ ] Testes unitários ( Junit/Mockito ) 🧩
 - [ ] Container Docker 📦
