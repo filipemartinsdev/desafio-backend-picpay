@@ -2,6 +2,7 @@ package com.desafiopicpay.dto;
 
 import com.desafiopicpay.entity.User;
 import com.desafiopicpay.entity.UserType;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,10 +11,13 @@ import lombok.Getter;
 
 import java.math.BigDecimal;
 
+/**
+ * User Response DTO of API
+ */
 @Data
 @Builder @Getter
 @AllArgsConstructor
-public class UserResponse {
+public class UserResponseDTO {
     @NotNull
     private Long id;
 
@@ -39,7 +43,7 @@ public class UserResponse {
 //    @Enumerated(EnumType.STRING)
 //    private UserType userType;
 
-    public UserResponse(User user){
+    public UserResponseDTO(User user){
         this.id = user.getId();
         this.firstName = user.getFirstName();
         this.lastName = user.getLastName();

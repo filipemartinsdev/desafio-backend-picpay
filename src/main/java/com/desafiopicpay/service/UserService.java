@@ -1,7 +1,7 @@
 package com.desafiopicpay.service;
 
-import com.desafiopicpay.dto.UserRequest;
-import com.desafiopicpay.dto.UserResponse;
+import com.desafiopicpay.dto.UserRequestDTO;
+import com.desafiopicpay.dto.UserResponseDTO;
 import com.desafiopicpay.exception.http.NotFoundException;
 import com.desafiopicpay.exception.transaction.TransactionForbiddenException;
 import com.desafiopicpay.entity.User;
@@ -18,34 +18,34 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public List<UserResponse> getAll(){
+    public List<UserResponseDTO> getAll(){
         return this.userRepository.findAll().stream()
-                .map(UserResponse::new).toList();
+                .map(UserResponseDTO::new).toList();
     }
 
-    public UserResponse getByDocument(String document){
-        return new UserResponse(
+    public UserResponseDTO getByDocument(String document){
+        return new UserResponseDTO(
                 this.userRepository.findUserByDocument(document).orElseThrow(()->{
                     return new NotFoundException("User not found");
                 })
         );
     }
 
-    public UserResponse getById(Long id){
-        return new UserResponse(
+    public UserResponseDTO getById(Long id){
+        return new UserResponseDTO(
                 this.userRepository.findById(id).orElseThrow(()->{
                     return new NotFoundException("User not found");
                 })
         );
     }
 
-    public UserResponse save(User user){
-        return new UserResponse(
+    public UserResponseDTO save(User user){
+        return new UserResponseDTO(
                 this.userRepository.save(user)
         );
     }
 
-    public UserResponse replace(Long id, UserRequest userRequest){
+    public UserResponseDTO replace(Long id, UserRequestDTO userRequest){
         if (!this.existsById(id)){
             throw new NotFoundException("User not exists");
         }
@@ -53,7 +53,7 @@ public class UserService {
         User user = new User(userRequest);
         user.setId(id);
 
-        return new UserResponse(
+        return new UserResponseDTO(
                 this.userRepository.save(user)
         );
     }

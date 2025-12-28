@@ -1,12 +1,16 @@
 package com.desafiopicpay.entity;
 
-import com.desafiopicpay.dto.UserRequest;
+import com.desafiopicpay.dto.UserRequestDTO;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.math.BigDecimal;
 
+
+/**
+ * User Entity of Database
+ */
 @Entity @Table(name = "users")
 @Builder
 @Getter
@@ -40,7 +44,7 @@ public class User {
     @Enumerated(EnumType.STRING)
     private UserType userType;
 
-    public User(UserRequest userRequest){
+    public User(UserRequestDTO userRequest){
         this.firstName = userRequest.getFirstName();
         this.lastName = userRequest.getLastName();
         this.email = userRequest.getEmail();

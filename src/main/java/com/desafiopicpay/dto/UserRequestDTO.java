@@ -8,11 +8,14 @@ import lombok.*;
 
 import java.math.BigDecimal;
 
+/**
+ * User Request DTO of API
+ */
 @Data
 @Builder @Getter
 @AllArgsConstructor
-public class UserRequest {
-    public UserRequest(){}
+public class UserRequestDTO {
+    public UserRequestDTO(){}
 
     @NotNull
     private String firstName;

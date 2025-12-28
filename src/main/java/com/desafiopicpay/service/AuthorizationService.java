@@ -1,6 +1,6 @@
 package com.desafiopicpay.service;
 
-import com.desafiopicpay.dto.TransactionRequest;
+import com.desafiopicpay.dto.TransactionRequestDTO;
 import com.desafiopicpay.exception.http.InternalServerErrorException;
 import com.desafiopicpay.exception.http.ServiceUnavailableException;
 import com.desafiopicpay.exception.transaction.TransactionForbiddenException;
@@ -15,12 +15,15 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.Map;
 
+/**
+ * Class to request external Transaction Authorization Service
+ */
 @Service
 public class AuthorizationService {
     @Autowired
     private RestTemplate restTemplate;
 
-    public void authorizeTransaction(TransactionRequest transaction){
+    public void authorizeTransaction(TransactionRequestDTO transaction){
         Dotenv dotenv = Dotenv.load();
         final String URL_API_AUTH = dotenv.get("URL_API_AUTH_TRANSFER");
         if (URL_API_AUTH == null){

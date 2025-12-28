@@ -7,9 +7,12 @@ import lombok.Getter;
 
 import java.math.BigDecimal;
 
+/**
+ * Transaction Request DTO of API
+ */
 @Data
 @Getter
-public class TransactionRequest {
+public class TransactionRequestDTO {
     @NotNull @Positive
     private BigDecimal amount;
 

@@ -9,10 +9,13 @@ import lombok.Getter;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+/**
+ * Transaction Response DTO of API
+ */
 @Data
 @Getter
 @AllArgsConstructor
-public class TransactionResponse {
+public class TransactionResponseDTO {
     private Long id;
 
     @NotNull
@@ -27,7 +30,7 @@ public class TransactionResponse {
     @NotNull
     private LocalDateTime timestamp;
 
-    public TransactionResponse(Transaction transaction){
+    public TransactionResponseDTO(Transaction transaction){
         this.id = transaction.getId();
         this.amount = transaction.getAmount();
         this.sender = transaction.getSender().getId();
