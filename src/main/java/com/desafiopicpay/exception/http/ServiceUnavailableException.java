@@ -1,7 +1,11 @@
 package com.desafiopicpay.exception.http;
 
-public class ServiceUnavailableException extends RuntimeException {
+import lombok.Getter;
+import org.springframework.http.HttpStatus;
+
+@Getter
+public class ServiceUnavailableException extends HttpStatusException {
     public ServiceUnavailableException(String message) {
-        super(message);
+        super(message, HttpStatus.NOT_FOUND.value());
     }
 }
