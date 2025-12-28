@@ -1,7 +1,12 @@
 package com.desafiopicpay.exception.http;
 
-public class InternalServerErrorException extends RuntimeException {
+import lombok.Getter;
+import org.springframework.http.HttpStatus;
+
+@Getter
+public class InternalServerErrorException extends HttpStatusException {
+
     public InternalServerErrorException(String message) {
-        super(message);
+        super(message, HttpStatus.INTERNAL_SERVER_ERROR.value());
     }
 }

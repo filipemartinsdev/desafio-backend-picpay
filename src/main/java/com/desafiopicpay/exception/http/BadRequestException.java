@@ -1,7 +1,12 @@
 package com.desafiopicpay.exception.http;
 
-public class BadRequestException extends RuntimeException {
+import lombok.Getter;
+import org.springframework.http.HttpStatus;
+
+@Getter
+public class BadRequestException extends HttpStatusException {
     public BadRequestException(String message) {
-        super(message);
+        super(message, HttpStatus.BAD_REQUEST.value());
+
     }
 }
