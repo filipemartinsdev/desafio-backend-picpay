@@ -151,7 +151,8 @@ Tendo em mente a arquitetura em camadas, a modelagem de pacotes pôde ser feita 
     │   ├── http/
     │   └── transaction/
     ├── handler/
-    └── configuration/
+    ├── configuration/
+    └── doc/
 ```
 
 ---
