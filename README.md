@@ -57,7 +57,7 @@ Para ler a documentação da API, utilize o swagger.
 
 Você deve ver:
 
-<img src="./images/swagger-ui" width="60%">
+<img src="./images/swagger-ui.png" width="60%">
 
 ## 🌐 Como executar
     
