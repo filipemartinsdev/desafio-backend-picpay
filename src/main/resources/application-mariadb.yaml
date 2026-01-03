@@ -8,7 +8,7 @@ spring:
     driver-class-name: org.mariadb.jdbc.Driver
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: ${DDL_AUTO:validate}
     properties:
       hibernate:
         format_sql: true
