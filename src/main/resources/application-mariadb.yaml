@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: desafiopicpay
+  datasource:
+    url: jdbc:mariadb://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_DATABASE}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+    database-platform: org.hibernate.dialect.MariaDBDialect

@@ -17,6 +17,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ActiveProfiles;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -28,6 +29,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
+@ActiveProfiles("test")
 class TransactionServiceTest {
     @Mock
     private TransactionRepository transactionRepository;
