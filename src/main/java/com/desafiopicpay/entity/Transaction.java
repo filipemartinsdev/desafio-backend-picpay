@@ -1,5 +1,6 @@
 package com.desafiopicpay.entity;
 
+import com.desafiopicpay.dto.TransactionRequestDTO;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
@@ -35,7 +36,7 @@ public class Transaction {
      * <p>This is a Foreign Key in Database.
      */
     @NotNull
-    @ManyToOne @JoinColumn(name="user_sender_id")
+    @ManyToOne(fetch = FetchType.LAZY) @JoinColumn(name="user_sender_id")
     private User sender;
 
     /**
@@ -43,7 +44,7 @@ public class Transaction {
      * <p>This is a Foreign Key in Database.
      */
     @NotNull
-    @ManyToOne @JoinColumn(name="user_receiver_id")
+    @ManyToOne(fetch = FetchType.LAZY) @JoinColumn(name="user_receiver_id")
     private User receiver;
 
     @NotNull @Column(name="created_at")
