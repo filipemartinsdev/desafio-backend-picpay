@@ -36,12 +36,15 @@ A seguir estão algumas regras de negócio que são importantes para o funcionam
 - Spring Framework
 - Spring Boot
 - Hibernate ORM
-- H2 Database
+- H2 Database (testes)
+- MariaDB (testes)
 - PostgreSQL
 - Apache Maven
 - Lombok
-- Javadoc
-- Spring openAPI (Swagger)
+- Javadoc (documentação)
+- Spring openAPI (Swagger - Documentação)
+- JUnit (testes unitários)
+- Mockito (testes unitários)
 
 
 ---
