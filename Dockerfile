@@ -2,7 +2,7 @@ FROM eclipse-temurin:17-jdk-jammy
 
 WORKDIR /app
 
-COPY ./app.jar app.jar
+COPY ./*.jar app.jar
 
 ENV ACTIVE_PROFILE=prod
 
