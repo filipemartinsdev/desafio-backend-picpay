@@ -167,5 +167,5 @@ Tendo em mente a arquitetura em camadas, a modelagem de pacotes pôde ser feita 
 - [x] Documentação com Javadoc 🗃️
 - [x] Documentação da API com Swagger 🗃️
 - [ ] Hash de senhas 🔐
-- [ ] Testes unitários ( Junit/Mockito ) 🧩
+- [x] Testes unitários ( Junit/Mockito ) 🧩
 - [ ] Container Docker 📦
