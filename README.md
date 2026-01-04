@@ -109,7 +109,7 @@ spring:
 2. Exportar variáveis de ambiente
 
 ```env
-DB_HOST=[SEU DATABASE_URL]
+DB_URL=[SEU DATABASE_URL]
 DB_USER=[SEU USUARIO]
 DB_PASSWORD=[SUA SENHA]    
 URL_API_AUTH_TRANSFER=https://util.devi.tools/api/v2/authorize
