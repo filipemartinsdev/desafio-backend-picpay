@@ -4,8 +4,6 @@ WORKDIR /app
 
 COPY ./*.jar app.jar
 
-ENV ACTIVE_PROFILE=prod
-
 EXPOSE 8080
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
