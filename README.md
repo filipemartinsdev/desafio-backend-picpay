@@ -171,4 +171,4 @@ Tendo em mente a arquitetura em camadas, a modelagem de pacotes pôde ser feita 
 - [x] Documentação da API com Swagger 🗃️
 - [ ] Hash de senhas 🔐
 - [x] Testes unitários ( Junit/Mockito ) 🧩
-- [ ] Container Docker 📦
+- [x] Container Docker 📦
