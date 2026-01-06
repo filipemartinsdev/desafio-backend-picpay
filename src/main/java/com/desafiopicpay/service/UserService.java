@@ -70,22 +70,13 @@ public class UserService {
     }
 
     public void delete(Long id){
-        try {
-            this.userRepository.deleteById(id);
-        } catch (RuntimeException exception){
+        if (!this.existsById(id)){
             throw new NotFoundException("User not exists");
         }
+        this.userRepository.deleteById(id);
     }
 
-    public void validateTransaction(User sender, BigDecimal amount) throws TransactionForbiddenException, NotFoundException{
-        if (sender.getUserType() == UserType.MERCHANT){
-            throw new TransactionForbiddenException("User type MERCHANT is not authorized to transfer");
-        }
 
-        if (sender.getBalance().compareTo(amount) < 0){
-            throw new TransactionForbiddenException("Insufficient funds");
-        }
-    }
 
     /**
      * Restrict method for use in TransactionService.
