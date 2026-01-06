@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 /**
  * Interface to document endpoints of {@link UserController} using Swagger.
- * @author
+ * @author Filipe Martins
  */
 public interface UserControllerSwaggerDoc {
     @Operation(
