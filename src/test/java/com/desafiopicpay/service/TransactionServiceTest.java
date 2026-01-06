@@ -7,7 +7,6 @@ import com.desafiopicpay.entity.User;
 import com.desafiopicpay.entity.UserType;
 import com.desafiopicpay.exception.transaction.TransactionForbiddenException;
 import com.desafiopicpay.repository.TransactionRepository;
-import org.assertj.core.api.JUnitSoftAssertions;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -24,7 +23,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -160,6 +158,9 @@ class TransactionServiceTest {
                 new BigDecimal(0),
                 UserType.COMMON
         );
+
+        Mockito.when(this.userService.findUserById(1L)).thenReturn(sender);
+        Mockito.when(this.userService.findUserById(2L)).thenReturn(receiver);
 
         var transactionRequest = new TransactionRequestDTO();
         transactionRequest.setAmount(new BigDecimal(1));
