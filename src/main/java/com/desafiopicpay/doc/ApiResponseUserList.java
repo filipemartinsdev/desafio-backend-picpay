@@ -5,7 +5,7 @@ import lombok.Data;
 
 import java.util.List;
 
-@Data
+@Data @Deprecated
 public class ApiResponseUserList {
     private String status;
     private String message;

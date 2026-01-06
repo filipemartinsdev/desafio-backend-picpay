@@ -6,10 +6,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.Getter;
+import lombok.*;
 
 import java.math.BigDecimal;
 
@@ -21,6 +18,7 @@ import java.math.BigDecimal;
 @Data
 @Builder @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 public class UserResponseDTO {
     @NotNull
     private Long id;
@@ -43,18 +41,4 @@ public class UserResponseDTO {
     @NotNull
     @Enumerated(EnumType.STRING)
     private UserType userType;
-
-    /**
-     * Constructor to create a UserResponseDTO from a User entity.
-     * @param user the user entity
-     */
-    public UserResponseDTO(User user){
-        this.id = user.getId();
-        this.firstName = user.getFirstName();
-        this.lastName = user.getLastName();
-        this.document = user.getDocument();
-        this.email = user.getEmail();
-        this.userType = user.getUserType();
-        this.balance = user.getBalance();
-    }
 }

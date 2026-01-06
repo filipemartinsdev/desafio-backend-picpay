@@ -174,7 +174,6 @@ class TransactionServiceTest {
         });
     }
 
-
     @Test
     @DisplayName("Should get all the transactions successfully from DB")
     void getAll() {

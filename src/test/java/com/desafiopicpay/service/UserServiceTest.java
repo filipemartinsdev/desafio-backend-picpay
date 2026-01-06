@@ -1,10 +1,12 @@
 package com.desafiopicpay.service;
 
+import com.desafiopicpay.dto.PagedUsersResponseDTO;
 import com.desafiopicpay.dto.UserRequestDTO;
 import com.desafiopicpay.dto.UserResponseDTO;
 import com.desafiopicpay.entity.User;
 import com.desafiopicpay.entity.UserType;
 import com.desafiopicpay.exception.http.NotFoundException;
+import com.desafiopicpay.mapper.UserMapper;
 import com.desafiopicpay.repository.UserRepository;
 
 import jakarta.persistence.EntityManager;
@@ -17,6 +19,10 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.ActiveProfiles;
 
 import java.math.BigDecimal;
@@ -76,32 +82,35 @@ class UserServiceTest {
         ));
 
         List<UserResponseDTO> spectedUserList = new ArrayList<>(List.of(
-                new UserResponseDTO(this.userCommonMock),
-                new UserResponseDTO(this.userMerchantMock)
+                UserMapper.toUserResponse(this.userCommonMock),
+                UserMapper.toUserResponse(this.userMerchantMock)
         ));
 
-        Mockito.when(this.userRepository.findAll()).thenReturn(userList);
+        Mockito.when(this.userRepository.findAll(any(Pageable.class))).thenReturn(
+                new PageImpl<User>(List.of(this.userCommonMock, this.userMerchantMock))
+        );
 
-        List<UserResponseDTO> responseList = this.userService.getAll();
-
+        PagedUsersResponseDTO responsePage = this.userService.getAll(PageRequest.of(0,10));
+        List<UserResponseDTO> responseList = responsePage.getContent();
        assertEquals(spectedUserList, responseList);
     }
 
     @Test @DisplayName("Should get an empty List when no users are found users in the DB")
     void getAllCase2(){
         List<User> emptyUserList = new ArrayList<>();
-        Mockito.when(this.userRepository.findAll()).thenReturn(emptyUserList);
+        Mockito.when(this.userRepository.findAll(any(Pageable.class))).thenReturn(
+                Page.empty()
+        );
 
-        List<UserResponseDTO> responseList = this.userService.getAll();
+        PagedUsersResponseDTO responseList = this.userService.getAll(PageRequest.of(0, 10));
 
-        assertThat(responseList).isEmpty();
+        assertThat(responseList.getContent()).isEmpty();
     }
-
 
     @Test @DisplayName("Should get the User by Id successfully from DB")
     void getByIdCase1() {
         Mockito.when(this.userRepository.findById(this.userCommonMock.getId())).thenReturn(Optional.of(this.userCommonMock));
-        UserResponseDTO spectedResponse = new UserResponseDTO(this.userCommonMock);
+        UserResponseDTO spectedResponse = UserMapper.toUserResponse(this.userCommonMock);
 
         UserResponseDTO userResponse = this.userService.getById(1L);
         assertEquals(spectedResponse, userResponse);
@@ -118,13 +127,12 @@ class UserServiceTest {
         });
     }
 
-
     @Test @DisplayName("Should get the User by Document successfully from DB")
     void getByDocumentCase1() {
         String document = this.userCommonMock.getDocument();
 
         Mockito.when(this.userRepository.findUserByDocument(document)).thenReturn(Optional.of(this.userCommonMock));
-        UserResponseDTO spectedResponse = new UserResponseDTO(this.userCommonMock);
+        UserResponseDTO spectedResponse = UserMapper.toUserResponse(this.userCommonMock);
 
         UserResponseDTO userResponse = this.userService.getByDocument(document);
         assertEquals(spectedResponse, userResponse);
@@ -157,7 +165,6 @@ class UserServiceTest {
 //            this.userService.save(invalidUser);
 //        });
 //    }
-
 
     @Test @DisplayName("Should replace the user successfully in the DB")
     void replace() {
@@ -229,7 +236,7 @@ class UserServiceTest {
         Mockito.when(this.userRepository.existsById(this.userCommonMock.getId())).thenReturn(true);
         Mockito.when(this.userRepository.findById(any())).thenReturn(Optional.of(this.userCommonMock));
 
-        UserResponseDTO spectedUser = new UserResponseDTO(this.userCommonMock);
+        UserResponseDTO spectedUser = UserMapper.toUserResponse(this.userCommonMock);
         UserResponseDTO responseUser = this.userService.getById(this.userCommonMock.getId());
 
         assertEquals(spectedUser, responseUser);

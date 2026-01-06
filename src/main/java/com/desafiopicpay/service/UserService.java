@@ -1,14 +1,18 @@
 package com.desafiopicpay.service;
 
+import com.desafiopicpay.dto.PagedUsersResponseDTO;
 import com.desafiopicpay.dto.UserRequestDTO;
 import com.desafiopicpay.dto.UserResponseDTO;
 import com.desafiopicpay.exception.http.NotFoundException;
 import com.desafiopicpay.exception.transaction.TransactionForbiddenException;
 import com.desafiopicpay.entity.User;
 import com.desafiopicpay.entity.UserType;
+import com.desafiopicpay.mapper.UserMapper;
 import com.desafiopicpay.repository.TransactionRepository;
 import com.desafiopicpay.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -25,13 +29,14 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public List<UserResponseDTO> getAll(){
-        return this.userRepository.findAll().stream()
-                .map(UserResponseDTO::new).toList();
+    public PagedUsersResponseDTO getAll(Pageable pageable){
+        Page<User> page = this.userRepository.findAll(pageable);
+        PagedUsersResponseDTO pagedUsers =  new PagedUsersResponseDTO(page);
+        return pagedUsers;
     }
 
     public UserResponseDTO getByDocument(String document){
-        return new UserResponseDTO(
+        return UserMapper.toUserResponse(
                 this.userRepository.findUserByDocument(document).orElseThrow(()->{
                     return new NotFoundException("User not found");
                 })
@@ -39,7 +44,7 @@ public class UserService {
     }
 
     public UserResponseDTO getById(Long id){
-        return new UserResponseDTO(
+        return UserMapper.toUserResponse(
                 this.userRepository.findById(id).orElseThrow(()->{
                     return new NotFoundException("User not found");
                 })
@@ -47,7 +52,7 @@ public class UserService {
     }
 
     public UserResponseDTO save(User user){
-        return new UserResponseDTO(
+        return UserMapper.toUserResponse(
                 this.userRepository.save(user)
         );
     }
@@ -60,7 +65,7 @@ public class UserService {
         User user = new User(userRequest);
         user.setId(id);
 
-        return new UserResponseDTO(
+        return UserMapper.toUserResponse(
                 this.userRepository.save(user)
         );
     }
