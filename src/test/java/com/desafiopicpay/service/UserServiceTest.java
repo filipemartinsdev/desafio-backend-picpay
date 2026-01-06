@@ -97,7 +97,6 @@ class UserServiceTest {
         assertThat(responseList).isEmpty();
     }
 
-
     @Test @DisplayName("Should get the User by Id successfully from DB")
     void getByIdCase1() {
         Mockito.when(this.userRepository.findById(this.userCommonMock.getId())).thenReturn(Optional.of(this.userCommonMock));
@@ -117,7 +116,6 @@ class UserServiceTest {
             this.userService.findUserById(id);
         });
     }
-
 
     @Test @DisplayName("Should get the User by Document successfully from DB")
     void getByDocumentCase1() {
@@ -157,7 +155,6 @@ class UserServiceTest {
 //            this.userService.save(invalidUser);
 //        });
 //    }
-
 
     @Test @DisplayName("Should replace the user successfully in the DB")
     void replace() {
