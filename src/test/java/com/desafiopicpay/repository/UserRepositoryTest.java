@@ -38,7 +38,7 @@ public class UserRepositoryTest {
         userDTO.setBalance(new BigDecimal(0));
         userDTO.setUserType(UserType.COMMON);
 
-        this.saveUser(userDTO);
+        this.createUser(userDTO);
         Optional<User> foundedUser = this.userRepository.findUserByDocument(document);
 
         assertTrue(foundedUser.isPresent());
@@ -62,7 +62,6 @@ public class UserRepositoryTest {
         assertFalse(foundedUser.isPresent());
     };
 
-
     @Test
     @DisplayName("Should get user by email successfully from DB")
     void findUserByEmailCase1(){
@@ -76,7 +75,7 @@ public class UserRepositoryTest {
         userDTO.setBalance(new BigDecimal(0));
         userDTO.setUserType(UserType.COMMON);
 
-        this.saveUser(userDTO);
+        this.createUser(userDTO);
         Optional<User> foundedUser = this.userRepository.findUserByEmail(email);
         assertTrue(foundedUser.isPresent());
     };
@@ -98,12 +97,7 @@ public class UserRepositoryTest {
         assertFalse(foundedUser.isPresent());
     };
 
-
-
-    void findUserByEmail(){};
-
-
-    private User saveUser(UserRequestDTO data){
+    private User createUser(UserRequestDTO data){
         User user = new User(data);
         this.entityManager.persist(user);
         return user;
