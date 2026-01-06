@@ -76,7 +76,6 @@ Você deve ver:
 
 
 ## 🌐 Como executar
-> Em manutenção
     
 ### Requisitos
 
