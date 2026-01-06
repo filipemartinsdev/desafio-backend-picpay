@@ -70,11 +70,10 @@ public class UserService {
     }
 
     public void delete(Long id){
-        try {
-            this.userRepository.deleteById(id);
-        } catch (RuntimeException exception){
+        if (this.existsById(id)){
             throw new NotFoundException("User not exists");
         }
+        this.userRepository.deleteById(id);
     }
 
     public void validateTransaction(User sender, BigDecimal amount) throws TransactionForbiddenException, NotFoundException{
