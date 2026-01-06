@@ -2,6 +2,7 @@ package com.desafiopicpay.doc;
 
 import com.desafiopicpay.controller.UserController;
 import com.desafiopicpay.dto.ApiResponseDTO;
+import com.desafiopicpay.dto.PagedUsersResponseDTO;
 import com.desafiopicpay.dto.UserRequestDTO;
 import com.desafiopicpay.dto.UserResponseDTO;
 
@@ -11,7 +12,8 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
-import java.util.List;
+
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,8 +26,8 @@ import org.springframework.web.bind.annotation.RequestBody;
  */
 public interface UserControllerSwaggerDoc {
     @Operation(
-            summary = "Get all users",
-            description = "Retrieves a complete list of all registered users in the system"
+            summary = "Get all users paginated",
+            description = "Retrieves a page of the users registered in the system"
     )
     @ApiResponses(value = {
             @ApiResponse(
@@ -33,7 +35,7 @@ public interface UserControllerSwaggerDoc {
                     description = "Users retrieved successfully",
                     content = @Content(
                             mediaType = MediaType.APPLICATION_JSON_VALUE,
-                            schema = @Schema(implementation = ApiResponseUserList.class)
+                            schema = @Schema(implementation = ApiResponsePagedUsers.class)
                     )
             ),
             @ApiResponse(
@@ -42,7 +44,7 @@ public interface UserControllerSwaggerDoc {
                     content = @Content
             )
     })
-    public ResponseEntity<ApiResponseDTO<List<UserResponseDTO>>> getAllUsers();
+    public ResponseEntity<ApiResponseDTO<PagedUsersResponseDTO>> getAllUsers(Pageable pageable);
 
 
     @Operation(

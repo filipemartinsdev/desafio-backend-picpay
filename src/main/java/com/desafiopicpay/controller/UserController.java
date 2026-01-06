@@ -2,12 +2,14 @@ package com.desafiopicpay.controller;
 
 import com.desafiopicpay.doc.UserControllerSwaggerDoc;
 import com.desafiopicpay.dto.ApiResponseDTO;
+import com.desafiopicpay.dto.PagedUsersResponseDTO;
 import com.desafiopicpay.dto.UserRequestDTO;
 import com.desafiopicpay.dto.UserResponseDTO;
 import com.desafiopicpay.entity.User;
 import com.desafiopicpay.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,21 +43,20 @@ public class UserController implements UserControllerSwaggerDoc {
 
     
     /**
-     * Retrieve a list of all users with their basic details.
+     * Retrieve a paged list of users with their basic details.
      *
      * <p>The response is wrapped in {@link ApiResponseDTO} for standardized format.
-     * @return {@link ResponseEntity} containing {@link ApiResponseDTO} with list of {@link UserResponseDTO} on field data
-     * @see UserService#getAll()
+     * @return {@link ResponseEntity} containing {@link ApiResponseDTO} with {@link PagedUsersResponseDTO} on field data
+     * @see UserService#getAll(Pageable)
      */
     @GetMapping("")
-    public ResponseEntity<ApiResponseDTO<List<UserResponseDTO>>> getAllUsers(){
+    public ResponseEntity<ApiResponseDTO<PagedUsersResponseDTO>> getAllUsers(Pageable pageable){
         return ResponseEntity.ok(
                 ApiResponseDTO.success(
-                        this.userService.getAll()
+                        this.userService.getAll(pageable)
                 )
         );
     }
-
 
     /**
      * Retrieves a user from its id.
