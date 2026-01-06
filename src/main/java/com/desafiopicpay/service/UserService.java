@@ -70,7 +70,7 @@ public class UserService {
     }
 
     public void delete(Long id){
-        if (this.existsById(id)){
+        if (!this.existsById(id)){
             throw new NotFoundException("User not exists");
         }
         this.userRepository.deleteById(id);
