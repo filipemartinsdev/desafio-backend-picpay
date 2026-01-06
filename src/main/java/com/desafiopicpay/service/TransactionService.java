@@ -2,13 +2,16 @@ package com.desafiopicpay.service;
 
 import com.desafiopicpay.dto.TransactionRequestDTO;
 import com.desafiopicpay.dto.TransactionResponseDTO;
+import com.desafiopicpay.entity.UserType;
 import com.desafiopicpay.exception.http.NotFoundException;
 import com.desafiopicpay.entity.Transaction;
 import com.desafiopicpay.entity.User;
+import com.desafiopicpay.exception.transaction.TransactionForbiddenException;
 import com.desafiopicpay.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -49,7 +52,7 @@ public class TransactionService {
         User sender = this.userService.findUserById(transactionRequest.getSender());
         User receiver = this.userService.findUserById(transactionRequest.getReceiver());
 
-        this.userService.validateTransaction(sender, transactionRequest.getAmount());
+        this.validateTransaction(sender, transactionRequest.getAmount());
 
         this.authorizationService.authorizeTransaction(transactionRequest);
 
@@ -66,5 +69,15 @@ public class TransactionService {
         return new TransactionResponseDTO(
                 this.transactionRepository.save(transaction)
         );
+    }
+
+    public void validateTransaction(User sender, BigDecimal amount) throws TransactionForbiddenException, NotFoundException{
+        if (sender.getUserType() == UserType.MERCHANT){
+            throw new TransactionForbiddenException("User type MERCHANT is not authorized to transfer");
+        }
+
+        if (sender.getBalance().compareTo(amount) < 0){
+            throw new TransactionForbiddenException("Insufficient funds");
+        }
     }
 }
