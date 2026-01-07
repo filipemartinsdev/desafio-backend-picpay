@@ -28,6 +28,8 @@ public class UserMapper {
         userResponseDTO.setLastName(userEntity.getLastName());
         userResponseDTO.setDocument(userEntity.getDocument());
         userResponseDTO.setEmail(userEntity.getEmail());
+        userResponseDTO.setUserType(userEntity.getUserType());
+        userResponseDTO.setBalance(userEntity.getBalance());
         return userResponseDTO;
     }
 
@@ -38,6 +40,8 @@ public class UserMapper {
         userRequestDTO.setLastName(userEntity.getLastName());
         userRequestDTO.setDocument(userEntity.getDocument());
         userRequestDTO.setEmail(userEntity.getEmail());
+        userRequestDTO.setBalance(userEntity.getBalance());
+        userRequestDTO.setUserType(userEntity.getUserType());
         userRequestDTO.setBalance(userEntity.getBalance());
 
         return userRequestDTO;
