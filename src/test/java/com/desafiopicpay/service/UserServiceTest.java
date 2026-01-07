@@ -171,7 +171,9 @@ class UserServiceTest {
         Mockito.when(this.userRepository.save(any())).thenReturn(this.userCommonMock);
         Mockito.when(this.userRepository.existsById(this.userCommonMock.getId())).thenReturn(true);
 
-        UserRequestDTO userRequest = new UserRequestDTO();
+        UserRequestDTO userRequest = UserMapper.toUserRequest(this.userCommonMock);
+
+        new UserRequestDTO();
         userRequest.setFirstName(this.userCommonMock.getFirstName());
         userRequest.setLastName(this.userCommonMock.getLastName());
         userRequest.setBalance(this.userCommonMock.getBalance());
