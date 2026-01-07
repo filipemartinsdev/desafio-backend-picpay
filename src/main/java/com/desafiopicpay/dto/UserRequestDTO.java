@@ -17,6 +17,7 @@ import java.math.BigDecimal;
 @Builder @Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode
 public class UserRequestDTO {
     @NotNull
     private String firstName;

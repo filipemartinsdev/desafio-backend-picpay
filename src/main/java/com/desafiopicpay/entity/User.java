@@ -16,6 +16,7 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @AllArgsConstructor
+@EqualsAndHashCode
 public class User {
     public User(){}
 

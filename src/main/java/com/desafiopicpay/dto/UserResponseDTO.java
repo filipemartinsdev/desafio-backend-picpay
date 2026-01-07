@@ -19,6 +19,7 @@ import java.math.BigDecimal;
 @Builder @Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode
 public class UserResponseDTO {
     @NotNull
     private Long id;
