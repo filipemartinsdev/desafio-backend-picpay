@@ -1,7 +1,8 @@
-package com.desafiopicpay.dto;
+package com.desafiopicpay.model.dto;
 
 
-import com.desafiopicpay.entity.UserType;
+import com.desafiopicpay.model.entity.User;
+import com.desafiopicpay.model.entity.UserType;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
@@ -10,7 +11,7 @@ import java.math.BigDecimal;
 
 /**
  * DTO for API requested user.
- * @see com.desafiopicpay.entity.User
+ * @see User
  * @author Filipe Martins
  */
 @Data

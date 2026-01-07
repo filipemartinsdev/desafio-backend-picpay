@@ -1,12 +1,11 @@
 package com.desafiopicpay.mapper;
 
-import com.desafiopicpay.dto.UserRequestDTO;
-import com.desafiopicpay.dto.UserResponseDTO;
-import com.desafiopicpay.entity.User;
-import com.desafiopicpay.entity.UserType;
+import com.desafiopicpay.model.dto.UserRequestDTO;
+import com.desafiopicpay.model.dto.UserResponseDTO;
+import com.desafiopicpay.model.entity.User;
+import com.desafiopicpay.model.entity.UserType;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.math.BigDecimal;
 

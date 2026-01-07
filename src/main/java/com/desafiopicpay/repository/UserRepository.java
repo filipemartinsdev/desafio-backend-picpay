@@ -1,6 +1,6 @@
 package com.desafiopicpay.repository;
 
-import com.desafiopicpay.entity.User;
+import com.desafiopicpay.model.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

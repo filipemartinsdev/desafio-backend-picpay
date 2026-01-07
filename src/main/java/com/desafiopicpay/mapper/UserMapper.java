@@ -1,9 +1,9 @@
 package com.desafiopicpay.mapper;
 
 
-import com.desafiopicpay.dto.UserRequestDTO;
-import com.desafiopicpay.dto.UserResponseDTO;
-import com.desafiopicpay.entity.User;
+import com.desafiopicpay.model.dto.UserRequestDTO;
+import com.desafiopicpay.model.dto.UserResponseDTO;
+import com.desafiopicpay.model.entity.User;
 
 /**
  * Util class to mapper User DTO and Entity

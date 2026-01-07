@@ -1,8 +1,8 @@
 package com.desafiopicpay.handler;
 
-import com.desafiopicpay.dto.ApiResponseDTO;
 import com.desafiopicpay.exception.http.*;
 import com.desafiopicpay.exception.transaction.TransactionForbiddenException;
+import com.desafiopicpay.model.dto.ApiResponseDTO;
 import com.desafiopicpay.service.NotificationServiceImpl;
 import org.jspecify.annotations.NonNull;
 import org.springframework.http.HttpStatus;

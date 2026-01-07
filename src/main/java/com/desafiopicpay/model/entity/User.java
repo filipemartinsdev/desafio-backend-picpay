@@ -1,10 +1,11 @@
-package com.desafiopicpay.entity;
+package com.desafiopicpay.model.entity;
 
-import com.desafiopicpay.dto.UserRequestDTO;
+import com.desafiopicpay.model.dto.UserRequestDTO;
+import com.desafiopicpay.model.entity.UserType;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
-
 import java.math.BigDecimal;
 
 

@@ -1,10 +1,10 @@
 package com.desafiopicpay.service;
 
-import com.desafiopicpay.dto.PagedUsersResponseDTO;
-import com.desafiopicpay.dto.UserRequestDTO;
-import com.desafiopicpay.dto.UserResponseDTO;
-import com.desafiopicpay.entity.User;
-import com.desafiopicpay.entity.UserType;
+import com.desafiopicpay.model.dto.PagedUsersResponseDTO;
+import com.desafiopicpay.model.dto.UserRequestDTO;
+import com.desafiopicpay.model.dto.UserResponseDTO;
+import com.desafiopicpay.model.entity.User;
+import com.desafiopicpay.model.entity.UserType;
 import com.desafiopicpay.exception.http.NotFoundException;
 import com.desafiopicpay.mapper.UserMapper;
 import com.desafiopicpay.repository.UserRepository;

@@ -1,6 +1,6 @@
 package com.desafiopicpay.doc;
 
-import com.desafiopicpay.dto.TransactionResponseDTO;
+import com.desafiopicpay.model.dto.TransactionResponseDTO;
 import lombok.Data;
 
 import java.util.List;

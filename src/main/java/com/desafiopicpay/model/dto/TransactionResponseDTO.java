@@ -1,6 +1,6 @@
-package com.desafiopicpay.dto;
+package com.desafiopicpay.model.dto;
 
-import com.desafiopicpay.entity.Transaction;
+import com.desafiopicpay.model.entity.Transaction;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;

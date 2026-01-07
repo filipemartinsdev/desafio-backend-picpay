@@ -1,8 +1,7 @@
-package com.desafiopicpay.dto;
+package com.desafiopicpay.model.dto;
 
-import com.desafiopicpay.entity.User;
-import com.desafiopicpay.entity.UserType;
-import io.swagger.v3.oas.annotations.media.Schema;
+import com.desafiopicpay.model.entity.User;
+import com.desafiopicpay.model.entity.UserType;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.validation.constraints.NotNull;

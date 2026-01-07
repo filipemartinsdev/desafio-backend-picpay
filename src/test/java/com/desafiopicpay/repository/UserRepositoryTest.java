@@ -1,8 +1,8 @@
 package com.desafiopicpay.repository;
 
-import com.desafiopicpay.dto.UserRequestDTO;
-import com.desafiopicpay.entity.User;
-import com.desafiopicpay.entity.UserType;
+import com.desafiopicpay.model.dto.UserRequestDTO;
+import com.desafiopicpay.model.entity.User;
+import com.desafiopicpay.model.entity.UserType;
 import jakarta.persistence.EntityManager;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

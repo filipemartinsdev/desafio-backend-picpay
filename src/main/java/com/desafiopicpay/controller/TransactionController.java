@@ -1,9 +1,10 @@
 package com.desafiopicpay.controller;
 
 import com.desafiopicpay.doc.TransactionControllerSwaggerDoc;
-import com.desafiopicpay.dto.ApiResponseDTO;
-import com.desafiopicpay.dto.TransactionRequestDTO;
-import com.desafiopicpay.dto.TransactionResponseDTO;
+
+import com.desafiopicpay.model.dto.ApiResponseDTO;
+import com.desafiopicpay.model.dto.TransactionRequestDTO;
+import com.desafiopicpay.model.dto.TransactionResponseDTO;
 import com.desafiopicpay.service.TransactionService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

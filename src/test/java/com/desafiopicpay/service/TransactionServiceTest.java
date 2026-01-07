@@ -1,10 +1,10 @@
 package com.desafiopicpay.service;
 
-import com.desafiopicpay.dto.TransactionRequestDTO;
-import com.desafiopicpay.dto.TransactionResponseDTO;
-import com.desafiopicpay.entity.Transaction;
-import com.desafiopicpay.entity.User;
-import com.desafiopicpay.entity.UserType;
+import com.desafiopicpay.model.dto.TransactionRequestDTO;
+import com.desafiopicpay.model.dto.TransactionResponseDTO;
+import com.desafiopicpay.model.entity.Transaction;
+import com.desafiopicpay.model.entity.User;
+import com.desafiopicpay.model.entity.UserType;
 import com.desafiopicpay.exception.transaction.TransactionForbiddenException;
 import com.desafiopicpay.repository.TransactionRepository;
 import org.junit.jupiter.api.Assertions;

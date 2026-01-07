@@ -1,7 +1,7 @@
-package com.desafiopicpay.dto;
+package com.desafiopicpay.model.dto;
 
-import com.desafiopicpay.entity.User;
 import com.desafiopicpay.mapper.UserMapper;
+import com.desafiopicpay.model.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
