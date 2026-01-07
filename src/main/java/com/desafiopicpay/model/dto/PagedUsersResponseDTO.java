@@ -1,7 +1,7 @@
-package com.desafiopicpay.dto;
+package com.desafiopicpay.model.dto;
 
-import com.desafiopicpay.entity.User;
 import com.desafiopicpay.mapper.UserMapper;
+import com.desafiopicpay.model.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,12 +16,14 @@ public class PagedUsersResponseDTO {
     private Integer size;
     private Integer totalPages;
     private Long totalElements;
+    private Boolean isLast;
     private List<UserResponseDTO> content;
 
     public PagedUsersResponseDTO(Page<User> page){
         this.size = page.getSize();
         this.totalPages = page.getTotalPages();
         this.totalElements = page.getTotalElements();
+        this.isLast = page.isLast();
         this.content = page.getContent().stream().map(UserMapper::toUserResponse).toList();
     }
 }

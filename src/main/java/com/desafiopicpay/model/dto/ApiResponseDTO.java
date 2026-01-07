@@ -1,4 +1,4 @@
-package com.desafiopicpay.dto;
+package com.desafiopicpay.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.v3.oas.annotations.media.Schema;

@@ -1,11 +1,12 @@
 package com.desafiopicpay.doc;
 
 import com.desafiopicpay.controller.UserController;
-import com.desafiopicpay.dto.ApiResponseDTO;
-import com.desafiopicpay.dto.PagedUsersResponseDTO;
-import com.desafiopicpay.dto.UserRequestDTO;
-import com.desafiopicpay.dto.UserResponseDTO;
 
+
+import com.desafiopicpay.model.dto.ApiResponseDTO;
+import com.desafiopicpay.model.dto.PagedUsersResponseDTO;
+import com.desafiopicpay.model.dto.UserRequestDTO;
+import com.desafiopicpay.model.dto.UserResponseDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;

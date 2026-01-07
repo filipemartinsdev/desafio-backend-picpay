@@ -1,19 +1,19 @@
 package com.desafiopicpay.controller;
 
 import com.desafiopicpay.doc.UserControllerSwaggerDoc;
-import com.desafiopicpay.dto.ApiResponseDTO;
-import com.desafiopicpay.dto.PagedUsersResponseDTO;
-import com.desafiopicpay.dto.UserRequestDTO;
-import com.desafiopicpay.dto.UserResponseDTO;
-import com.desafiopicpay.entity.User;
+import com.desafiopicpay.mapper.UserMapper;
+import com.desafiopicpay.model.dto.ApiResponseDTO;
+import com.desafiopicpay.model.dto.UserResponseDTO;
+import com.desafiopicpay.model.dto.UserRequestDTO;
+import com.desafiopicpay.model.dto.PagedUsersResponseDTO;
+import com.desafiopicpay.model.entity.User;
 import com.desafiopicpay.service.UserService;
+
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 /**
  * User controller, following the JSend standard response.
@@ -113,13 +113,13 @@ public class UserController implements UserControllerSwaggerDoc {
      * Create new user on the system.
      * @param userRequest the requested user
      * @return {@link ResponseEntity} containing {@link ApiResponseDTO} with the created user on field data
-     * @see UserService#save(User) 
+     * @see UserService#save(User)
      */
     @PostMapping("")
     public ResponseEntity<ApiResponseDTO<UserResponseDTO>> createUser(@RequestBody @Valid UserRequestDTO userRequest){
         return ResponseEntity.ok(
                 ApiResponseDTO.success(
-                        this.userService.save(new User(userRequest))
+                        this.userService.save(UserMapper.toEntity(userRequest))
                 )
         );
     }

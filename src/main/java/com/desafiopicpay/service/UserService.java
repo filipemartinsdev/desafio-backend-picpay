@@ -1,22 +1,16 @@
 package com.desafiopicpay.service;
 
-import com.desafiopicpay.dto.PagedUsersResponseDTO;
-import com.desafiopicpay.dto.UserRequestDTO;
-import com.desafiopicpay.dto.UserResponseDTO;
+import com.desafiopicpay.model.dto.PagedUsersResponseDTO;
+import com.desafiopicpay.model.dto.UserRequestDTO;
+import com.desafiopicpay.model.dto.UserResponseDTO;
 import com.desafiopicpay.exception.http.NotFoundException;
-import com.desafiopicpay.exception.transaction.TransactionForbiddenException;
-import com.desafiopicpay.entity.User;
-import com.desafiopicpay.entity.UserType;
+import com.desafiopicpay.model.entity.User;
 import com.desafiopicpay.mapper.UserMapper;
-import com.desafiopicpay.repository.TransactionRepository;
 import com.desafiopicpay.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import java.math.BigDecimal;
-import java.util.List;
 
 /**
  * Service to manage user operations.

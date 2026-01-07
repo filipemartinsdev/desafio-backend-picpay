@@ -1,10 +1,13 @@
 package com.desafiopicpay.mapper;
 
 
-import com.desafiopicpay.dto.UserRequestDTO;
-import com.desafiopicpay.dto.UserResponseDTO;
-import com.desafiopicpay.entity.User;
+import com.desafiopicpay.model.dto.UserRequestDTO;
+import com.desafiopicpay.model.dto.UserResponseDTO;
+import com.desafiopicpay.model.entity.User;
 
+/**
+ * Util class to mapper User DTO and Entity
+ */
 public class UserMapper {
     public static User toEntity(UserRequestDTO userRequestDTO){
         User user = new User();
@@ -25,6 +28,22 @@ public class UserMapper {
         userResponseDTO.setLastName(userEntity.getLastName());
         userResponseDTO.setDocument(userEntity.getDocument());
         userResponseDTO.setEmail(userEntity.getEmail());
+        userResponseDTO.setUserType(userEntity.getUserType());
+        userResponseDTO.setBalance(userEntity.getBalance());
         return userResponseDTO;
+    }
+
+    public static UserRequestDTO toUserRequest(User userEntity){
+        UserRequestDTO userRequestDTO = new UserRequestDTO();
+
+        userRequestDTO.setFirstName(userEntity.getFirstName());
+        userRequestDTO.setLastName(userEntity.getLastName());
+        userRequestDTO.setDocument(userEntity.getDocument());
+        userRequestDTO.setEmail(userEntity.getEmail());
+        userRequestDTO.setBalance(userEntity.getBalance());
+        userRequestDTO.setUserType(userEntity.getUserType());
+        userRequestDTO.setBalance(userEntity.getBalance());
+
+        return userRequestDTO;
     }
 }

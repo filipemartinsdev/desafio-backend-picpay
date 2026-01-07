@@ -1,6 +1,7 @@
 package com.desafiopicpay.doc;
 
-import com.desafiopicpay.dto.PagedUsersResponseDTO;
+
+import com.desafiopicpay.model.dto.PagedUsersResponseDTO;
 
 public class ApiResponsePagedUsers {
     private String status;

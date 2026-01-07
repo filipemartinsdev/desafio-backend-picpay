@@ -1,28 +1,25 @@
-package com.desafiopicpay.dto;
+package com.desafiopicpay.model.dto;
 
-import com.desafiopicpay.entity.User;
-import com.desafiopicpay.entity.UserType;
-import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+
+import com.desafiopicpay.model.entity.User;
+import com.desafiopicpay.model.entity.UserType;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.math.BigDecimal;
 
 /**
- * DTO for API response user.
- * <p>This is obtained from a {@link User} entity.
+ * DTO for API requested user.
+ * @see User
  * @author Filipe Martins
  */
 @Data
 @Builder @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserResponseDTO {
-    @NotNull
-    private Long id;
-
+@EqualsAndHashCode
+public class UserRequestDTO {
     @NotNull
     private String firstName;
 
@@ -36,9 +33,11 @@ public class UserResponseDTO {
     private String email;
 
     @NotNull
-    private BigDecimal balance;
+    private String password;
 
-    @NotNull
     @Enumerated(EnumType.STRING)
     private UserType userType;
+
+    @NotNull
+    private BigDecimal balance;
 }

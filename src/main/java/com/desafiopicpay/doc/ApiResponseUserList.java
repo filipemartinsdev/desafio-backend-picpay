@@ -1,6 +1,6 @@
 package com.desafiopicpay.doc;
 
-import com.desafiopicpay.dto.UserResponseDTO;
+import com.desafiopicpay.model.dto.UserResponseDTO;
 import lombok.Data;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.desafiopicpay.dto;
+package com.desafiopicpay.model.dto;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;

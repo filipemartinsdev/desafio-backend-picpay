@@ -1,6 +1,6 @@
 package com.desafiopicpay.service;
 
-import com.desafiopicpay.entity.Transaction;
+import com.desafiopicpay.model.entity.Transaction;
 import com.desafiopicpay.exception.http.ServiceUnavailableException;
 
 /**

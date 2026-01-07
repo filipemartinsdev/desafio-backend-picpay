@@ -1,6 +1,5 @@
-package com.desafiopicpay.entity;
+package com.desafiopicpay.model.entity;
 
-import com.desafiopicpay.dto.TransactionRequestDTO;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
@@ -45,12 +44,12 @@ public class Transaction {
      */
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY) @JoinColumn(name="user_receiver_id")
-    private User receiver;
+    private com.desafiopicpay.model.entity.User receiver;
 
     @NotNull @Column(name="created_at")
     private LocalDateTime timestamp;
 
-    public Transaction(User sender, User receiver, BigDecimal amount){
+    public Transaction(com.desafiopicpay.model.entity.User sender, com.desafiopicpay.model.entity.User receiver, BigDecimal amount){
         this.sender = sender;
         this.receiver = receiver;
         this.amount = amount;

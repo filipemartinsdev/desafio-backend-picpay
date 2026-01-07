@@ -1,6 +1,6 @@
 package com.desafiopicpay.service;
 
-import com.desafiopicpay.dto.TransactionRequestDTO;
+import com.desafiopicpay.model.dto.TransactionRequestDTO;
 import com.desafiopicpay.exception.http.InternalServerErrorException;
 import com.desafiopicpay.exception.http.ServiceUnavailableException;
 import com.desafiopicpay.exception.transaction.TransactionForbiddenException;

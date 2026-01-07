@@ -1,23 +1,28 @@
-package com.desafiopicpay.dto;
+package com.desafiopicpay.model.dto;
 
-
-import com.desafiopicpay.entity.UserType;
-import jakarta.persistence.*;
+import com.desafiopicpay.model.entity.User;
+import com.desafiopicpay.model.entity.UserType;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.math.BigDecimal;
 
 /**
- * DTO for API requested user.
- * @see com.desafiopicpay.entity.User
+ * DTO for API response user.
+ * <p>This is obtained from a {@link User} entity.
  * @author Filipe Martins
  */
 @Data
 @Builder @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserRequestDTO {
+@EqualsAndHashCode
+public class UserResponseDTO {
+    @NotNull
+    private Long id;
+
     @NotNull
     private String firstName;
 
@@ -31,11 +36,9 @@ public class UserRequestDTO {
     private String email;
 
     @NotNull
-    private String password;
-
-    @Enumerated(EnumType.STRING)
-    private UserType userType;
+    private BigDecimal balance;
 
     @NotNull
-    private BigDecimal balance;
+    @Enumerated(EnumType.STRING)
+    private UserType userType;
 }

@@ -1,10 +1,10 @@
 package com.desafiopicpay.service;
 
-import com.desafiopicpay.dto.PagedUsersResponseDTO;
-import com.desafiopicpay.dto.UserRequestDTO;
-import com.desafiopicpay.dto.UserResponseDTO;
-import com.desafiopicpay.entity.User;
-import com.desafiopicpay.entity.UserType;
+import com.desafiopicpay.model.dto.PagedUsersResponseDTO;
+import com.desafiopicpay.model.dto.UserRequestDTO;
+import com.desafiopicpay.model.dto.UserResponseDTO;
+import com.desafiopicpay.model.entity.User;
+import com.desafiopicpay.model.entity.UserType;
 import com.desafiopicpay.exception.http.NotFoundException;
 import com.desafiopicpay.mapper.UserMapper;
 import com.desafiopicpay.repository.UserRepository;
@@ -171,7 +171,9 @@ class UserServiceTest {
         Mockito.when(this.userRepository.save(any())).thenReturn(this.userCommonMock);
         Mockito.when(this.userRepository.existsById(this.userCommonMock.getId())).thenReturn(true);
 
-        UserRequestDTO userRequest = new UserRequestDTO();
+        UserRequestDTO userRequest = UserMapper.toUserRequest(this.userCommonMock);
+
+        new UserRequestDTO();
         userRequest.setFirstName(this.userCommonMock.getFirstName());
         userRequest.setLastName(this.userCommonMock.getLastName());
         userRequest.setBalance(this.userCommonMock.getBalance());
