@@ -13,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PagedUsersResponseDTO {
+    private Integer page;
     private Integer size;
     private Integer totalPages;
     private Long totalElements;
@@ -20,6 +21,7 @@ public class PagedUsersResponseDTO {
     private List<UserResponseDTO> content;
 
     public PagedUsersResponseDTO(Page<User> page){
+        this.page = page.getPageable().getPageNumber();
         this.size = page.getSize();
         this.totalPages = page.getTotalPages();
         this.totalElements = page.getTotalElements();
